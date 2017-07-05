@@ -1,0 +1,13 @@
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\POCDemo.Entities.dll
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\POCDemo.Entities.pdb
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\BT.TS360.Common.dll
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\MongoDB.Bson.dll
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\MongoDB.Driver.dll
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\MongoDB.Bson.xml
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\MongoDB.Driver.xml
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\obj\Debug\POCDemo.Entities.dll
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\obj\Debug\POCDemo.Entities.pdb
+C:\Users\nyadav1\Source\Repos\POCSyncApp\POCDemo.Entities\obj\Debug\POCDemo.Entities.csprojResolveAssemblyReference.cache

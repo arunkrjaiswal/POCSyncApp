@@ -10,6 +10,7 @@ using BT.TS360.BLL.Entities;
 using BT.TS360.BLL;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Reflection;
 
 namespace POCDemo
 {
@@ -17,13 +18,31 @@ namespace POCDemo
     {
         static void Main(string[] args)
         {
+
+
+            GetNewMyObject("BT.TS360.BLL.Entities.Promotion");
             // Azure CDN Integration //
             //AzureCDNDemo.UpdateData();
 
             // Sharepoint-MongoDB Integration //
             SharePointToMongoDemo sharePointToMongoDemo = new SharePointToMongoDemo();
-            //sharePointToMongoDemo.GetListFromSP();
+            sharePointToMongoDemo.GetListFromSP();
             sharePointToMongoDemo.GetListFromMongo();
         }
+
+        public static void GetNewMyObject(string pattern)
+        {
+
+            var result = System.Activator.CreateInstance(Type.GetType(pattern));
+
+             
+        }
+    }
+
+    public class MyDummyClass
+    {
+        public int MyProperty { get; set; }
+        public int MyProperty1 { get; set; }
+        public int MyProperty2 { get; set; }
     }
 }

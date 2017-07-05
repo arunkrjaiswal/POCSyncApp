@@ -164,8 +164,6 @@
     <Compile Include="Entities\SiteConfiguration.cs" />
     <Compile Include="Entities\SiteLink.cs" />
     <Compile Include="Entities\SiteMenu.cs" />
-    <Compile Include="Entities\SP\ImageLookup.cs" />
-    <Compile Include="Entities\SP\StagingCollectionGeneral.cs" />
     <Compile Include="Entities\SP\EListLookup.cs" />
     <Compile Include="Entities\SP\Existing_EList.cs" />
     <Compile Include="Entities\SP\Existing_EListCategory.cs" />
@@ -182,8 +180,10 @@
     <Compile Include="Entities\SP\Existing_PublicationSubcategory.cs" />
     <Compile Include="Entities\SP\Existing_SystemNotifications.cs" />
     <Compile Include="Entities\SP\Existing_TitleBar.cs" />
+    <Compile Include="Entities\SP\ImageLookup.cs" />
     <Compile Include="Entities\SP\StagingAdvancedSearchTips.cs" />
     <Compile Include="Entities\SP\StagingCollectionCarousel.cs" />
+    <Compile Include="Entities\SP\StagingCollectionGeneral.cs" />
     <Compile Include="Entities\SP\StagingComingSoonCarousel.cs" />
     <Compile Include="Entities\SP\StagingEList.cs" />
     <Compile Include="Entities\SP\StagingeListCategory.cs" />

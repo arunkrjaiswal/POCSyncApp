@@ -28,9 +28,9 @@ namespace POCDemo
                 .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Path, opts => opts.MapFrom(src => src.FileDirRef));
 
-                map.CreateMap<StagingPromotion, Promotion>()
-               .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.Id))
-               .ForMember(dest => dest.Path, opts => opts.MapFrom(src => src.FileDirRef));
+               // map.CreateMap<StagingPromotion, Promotion>()
+               //.ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.Id))
+               //.ForMember(dest => dest.Path, opts => opts.MapFrom(src => src.FileDirRef));
 
                 map.CreateMap<StagingPublication, Publication>()
                .ForMember(dest => dest.Id, opts => opts.MapFrom(src => src.Id))

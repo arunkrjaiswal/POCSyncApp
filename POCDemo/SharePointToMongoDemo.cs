@@ -1,24 +1,17 @@
-﻿using AutoMapper;
-using AzureCDNDemo;
+﻿using AzureCDNDemo;
 using BT.TS360.BLL;
 using BT.TS360.BLL.Entities;
-using Microsoft.BusinessData.MetadataModel;
-using Microsoft.SharePoint;
 using Microsoft.SharePoint.Client;
 using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
-using Newtonsoft.Json;
 using POCDemo.Entities.SP;
 using System;
 using System.Collections.Generic;
+//using System.ComponentModel;
 using System.Configuration;
-using System.Dynamic;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace POCDemo
 {
@@ -34,6 +27,7 @@ namespace POCDemo
             }
         }
 
+        public List<String> MongoCollectionNames { get; set; }
         public String DatabaseName
         {
             get
@@ -84,33 +78,26 @@ namespace POCDemo
             context.ExecuteQuery();
 
             CamlQuery query = CamlQuery.CreateAllItemsQuery();
-
+            MongoCollectionNames = new List<string>();
             // Enumerate the web.Lists. 
             foreach (List list in web.Lists)
             {
-                ListItemCollection listcollection = list.GetItems(query);
-                context.Load(listcollection);
-                context.ExecuteQuery();
-
-                if (listcollection != null && listcollection.Any())
-                {
-                    foreach (var item in listcollection)
-                    {
-                        var docs = BsonDocument.Parse(
-            Newtonsoft.Json.JsonConvert.SerializeObject(item.FieldValues));
-
-                        mongoCollection = MongoDatabase.GetCollection<BsonDocument>(String.Format("Staging{0}", list.Title.Replace(" ", String.Empty)));
-
-                        // TODO : Need to update the below code to insert multiple entities.
-                        mongoCollection.InsertOne(docs);
-
-                        Console.WriteLine(String.Format("{0} pushed Successfully!", list.Title));
-                    }
-
-                }
+                MongoCollectionNames.Add(list.Title);
+                //ListItemCollection listcollection = list.GetItems(query);
+                //context.Load(listcollection);
+                //context.ExecuteQuery();
+                //if (listcollection != null && listcollection.Any())
+                //{
+                //    foreach (var item in listcollection)
+                //    {
+                //        var docs = BsonDocument.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(item.FieldValues));
+                //        mongoCollection = MongoDatabase.GetCollection<BsonDocument>(String.Format("Staging{0}", list.Title.Replace(" ", String.Empty)));
+                //        mongoCollection.InsertOne(docs);
+                //        Console.WriteLine(String.Format("{0} pushed Successfully!", list.Title));
+                //    }
+                //}
             }
         }
-
 
         /// <summary>
         /// GetListFromMongo
@@ -119,15 +106,39 @@ namespace POCDemo
         {
             String connectionString = ConfigurationManager.AppSettings.Get("MongoDbConnectionString").Replace("{DB_NAME}", DatabaseName);
             MapperConfig.InitializeMap();
-            
-            MongoManager obj = new MongoManager();                        
-            obj.PushInitialRecords();             
-            
-            //UpdateEntities.UpdateElist<StagingeList, EList>();
+
+            //MongoManager obj = new MongoManager();
+            //obj.PushInitialRecords();
+
+
+
+            foreach (var item in MongoCollectionNames)
+            {
+                var sourceResult = System.Activator.CreateInstance(Type.GetType(String.Format("POCDemo.Entities.SP.Staging{0}", item))) as BaseList;
+                var destinationResult = item.Equals("eList") ? System.Activator.CreateInstance(Type.GetType("BT.TS360.BLL.Entities.EList")) : System.Activator.CreateInstance(Type.GetType("BT.TS360.BLL.Entities." + item));
+            }
+
+            UpdateEntities.UpdateElist<StagingeList, EList>();
             //UpdateEntities.UpdateElist<StagingeListCategory, EListCategory>();
             //UpdateEntities.UpdateElist<StagingeListSubcategory, EListSubCategory>();
-            
+
 
         }
+
+
+
+        //public T Update<MyObject>(string pattern)
+        //{
+        //    Type[] types = Assembly.GetExecutingAssembly().GetTypes();
+        //    foreach (Type type in types.Where(t => t.IsSubclassOf(typeof(MyObject))))
+        //    {
+        //        MyObject obj = (MyObject)Activator.CreateInstance(type);
+        //        if (obj.name == pattern)
+        //        {
+        //            return obj;
+        //        }
+        //    }
+        //    throw new Exception("Type " + pattern + " not found.");
+        //}
     }
 }
