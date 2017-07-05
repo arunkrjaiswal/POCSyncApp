@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B8E5B1A-8C0B-4D0F-8D72-19C91ED77036}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POCDemo</RootNamespace>
+    <AssemblyName>POCDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BT.TS360.Common">
+      <HintPath>..\Library\BT.TS360.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.8.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=8.1.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.8.1.4\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.4.4\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.4.4\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.4.4\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AzureCDNDemo.cs" />
+    <Compile Include="Entities\AdsItems.cs" />
+    <Compile Include="Entities\ArtifactBrowsingItem.cs" />
+    <Compile Include="Entities\ArtifactCluster.cs" />
+    <Compile Include="Entities\ArtifactClusterNode.cs" />
+    <Compile Include="Entities\BaseList.cs" />
+    <Compile Include="Entities\BaseMultipleProducts.cs" />
+    <Compile Include="Entities\BTNavigator.cs" />
+    <Compile Include="Entities\BTNavigatorGroup.cs" />
+    <Compile Include="Entities\BTSiteBranding.cs" />
+    <Compile Include="Entities\EList.cs" />
+    <Compile Include="Entities\EListCategory.cs" />
+    <Compile Include="Entities\EListInformation.cs" />
+    <Compile Include="Entities\EListSubCategory.cs" />
+    <Compile Include="Entities\EmailConfiguration.cs" />
+    <Compile Include="Entities\FeaturedBTeList.cs" />
+    <Compile Include="Entities\FeaturedPromotion.cs" />
+    <Compile Include="Entities\GlobalConfigurationContent.cs" />
+    <Compile Include="Entities\Global\Address.cs" />
+    <Compile Include="Entities\Global\Configuration.cs" />
+    <Compile Include="Entities\Global\FileSetting.cs" />
+    <Compile Include="Entities\Global\GlobalSetting.cs" />
+    <Compile Include="Entities\Global\QueryParameter.cs" />
+    <Compile Include="Entities\Global\SiteContext.cs" />
+    <Compile Include="Entities\Global\TitleBarModel.cs" />
+    <Compile Include="Entities\Global\UserInformation.cs" />
+    <Compile Include="Entities\Holiday.cs" />
+    <Compile Include="Entities\HyperLink.cs" />
+    <Compile Include="Entities\LibrariansCorner.cs" />
+    <Compile Include="Entities\Lists.cs" />
+    <Compile Include="Entities\LoginModel.cs" />
+    <Compile Include="Entities\MainMenu.cs" />
+    <Compile Include="Entities\MenuItem.cs" />
+    <Compile Include="Entities\MiniCart.cs" />
+    <Compile Include="Entities\NewReleaseCalendar.cs" />
+    <Compile Include="Entities\NewReleaseCalendarInfo.cs" />
+    <Compile Include="Entities\NewReleasesDay.cs" />
+    <Compile Include="Entities\NewReleasesWeek.cs" />
+    <Compile Include="Entities\Permissions.cs" />
+    <Compile Include="Entities\ProductContent.cs" />
+    <Compile Include="Entities\ProductSearchResult.cs" />
+    <Compile Include="Entities\Promotion.cs" />
+    <Compile Include="Entities\Publication.cs" />
+    <Compile Include="Entities\PublicationCategory.cs" />
+    <Compile Include="Entities\PublicationIssue.cs" />
+    <Compile Include="Entities\PublicationSubCategory.cs" />
+    <Compile Include="Entities\ReleaseDetails.cs" />
+    <Compile Include="Entities\RequestParameter.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\RoleFeature.cs" />
+    <Compile Include="Entities\RoleFeaturePermission.cs" />
+    <Compile Include="Entities\SearchSection.cs" />
+    <Compile Include="Entities\SiteConfiguration.cs" />
+    <Compile Include="Entities\SiteLink.cs" />
+    <Compile Include="Entities\SiteMenu.cs" />
+    <Compile Include="Entities\SP\ImageLookup.cs" />
+    <Compile Include="Entities\SP\StagingCollectionGeneral.cs" />
+    <Compile Include="Entities\SP\EListLookup.cs" />
+    <Compile Include="Entities\SP\Existing_EList.cs" />
+    <Compile Include="Entities\SP\Existing_EListCategory.cs" />
+    <Compile Include="Entities\SP\Existing_EListSubcategory.cs" />
+    <Compile Include="Entities\SP\Existing_FeaturedBTeLists.cs" />
+    <Compile Include="Entities\SP\Existing_FeaturedPromotion.cs" />
+    <Compile Include="Entities\SP\Existing_Holidays.cs" />
+    <Compile Include="Entities\SP\Existing_LibrariansCorner.cs" />
+    <Compile Include="Entities\SP\Existing_NewReleaseCalendar.cs" />
+    <Compile Include="Entities\SP\Existing_Promotion.cs" />
+    <Compile Include="Entities\SP\Existing_Publication.cs" />
+    <Compile Include="Entities\SP\Existing_PublicationCategory.cs" />
+    <Compile Include="Entities\SP\Existing_PublicationIssue.cs" />
+    <Compile Include="Entities\SP\Existing_PublicationSubcategory.cs" />
+    <Compile Include="Entities\SP\Existing_SystemNotifications.cs" />
+    <Compile Include="Entities\SP\Existing_TitleBar.cs" />
+    <Compile Include="Entities\SP\StagingAdvancedSearchTips.cs" />
+    <Compile Include="Entities\SP\StagingCollectionCarousel.cs" />
+    <Compile Include="Entities\SP\StagingComingSoonCarousel.cs" />
+    <Compile Include="Entities\SP\StagingEList.cs" />
+    <Compile Include="Entities\SP\StagingeListCategory.cs" />
+    <Compile Include="Entities\SP\StagingeListSubcategory.cs" />
+    <Compile Include="Entities\SP\StagingFeaturedBTeLists.cs" />
+    <Compile Include="Entities\SP\StagingFeaturedPromotion.cs" />
+    <Compile Include="Entities\SP\StagingPromotion.cs" />
+    <Compile Include="Entities\SP\StagingPublication.cs" />
+    <Compile Include="Entities\SP\StagingPublicationCategory.cs" />
+    <Compile Include="Entities\SP\StagingPublicationIssue.cs" />
+    <Compile Include="Entities\SP\StagingPublicationSubCategory.cs" />
+    <Compile Include="Entities\SP\StringType.cs" />
+    <Compile Include="Entities\StagingAnnouncements.cs" />
+    <Compile Include="Entities\SystemNotifications.cs" />
+    <Compile Include="Entities\TargetingParam.cs" />
+    <Compile Include="Entities\TitleBar.cs" />
+    <Compile Include="Entities\UserMembership.cs" />
+    <Compile Include="Entities\UserNavigation.cs" />
+    <Compile Include="Entities\UserRole.cs" />
+    <Compile Include="Entities\UserSystemNotifications.cs" />
+    <Compile Include="Entities\UserTokenVerification.cs" />
+    <Compile Include="IMongoRepository.cs" />
+    <Compile Include="MapperConfig.cs" />
+    <Compile Include="MongoClassMapHelper.cs" />
+    <Compile Include="MongoDBContext.cs" />
+    <Compile Include="MongoManager.cs" />
+    <Compile Include="MongoRepository.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharePointToMongoDemo.cs" />
+    <Compile Include="UpdateEntities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
